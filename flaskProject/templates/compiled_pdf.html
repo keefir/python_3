@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>You can download your resume!</h1>
+    <a href="out.pdf" download="resume.pdf">Download</a>
+    <h3>If you wish to make another one, press the button below.</h3>
+    <form action="http://localhost:5000/resume" method="get" name="form">
+        <input type="submit" value="Go back"/>
+    </form>
+{% endblock %}

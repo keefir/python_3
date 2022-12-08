@@ -1,0 +1,10 @@
+import scrapy
+
+
+class SteamspiderSpider(scrapy.Spider):
+    name = 'SteamSpider'
+    allowed_domains = ['store.steampowered.com']
+    start_urls = ['http://store.steampowered.com/']
+
+    def parse(self, response):
+        pass

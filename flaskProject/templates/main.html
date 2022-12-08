@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Welcome to resume constructor!</h1>
+
+<form action="http://localhost:5000/validate" method="post" name="form">
+    <label for="login">Login:</label>
+    <input type="text" id="login" name="login" required
+           minlength="4" size="10">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required
+           minlength="6" size="10">
+    <br>
+    {% if success == 'False' %}
+        <p style="color: red">User not found.</p>
+        {% elif success == 'not_found' %}
+        <p style="color: red">Login and password don't match.</p>
+        {% else %}
+        <br>
+    {% endif %}
+    <input type="submit" value="Log in"/>
+</form>
+<br>
+<form action="http://localhost:5000/register" method="get" name="reg">
+    <input type="submit" id="register" name="register" value="Register">
+</form>
+
+<br>
+
+<img src="https://i.imgur.com/5uIIIEJ.jpeg" alt="random parrot" style="height:400px; width:400px">
+{% endblock %}

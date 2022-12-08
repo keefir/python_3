@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Register and make your own resume!</h2>
+    <form action="http://localhost:5000/lookup" method="post" name="form">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" required
+               minlength="4" maxlength="8" size="20">
+        <br>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required size="20">
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required size="20">
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required
+               minlength="6" size="20">
+        <br>
+        {% if success == 'False' %}
+            <p style="color: red">User with this login already exists.</p>
+        {% else %}
+            <br>
+        {% endif %}
+        <input type="submit" value="Register">
+    </form>
+    <br>
+    <form action="http://localhost:5000" method="get" name="form">
+        <input type="submit" value="To main page">
+    </form>
+{% endblock %}

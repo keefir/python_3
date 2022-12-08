@@ -1,0 +1,9 @@
+{% for user in users %}
+<div class='user'>
+    <p>Name: {{ user['name'] }}</p>
+    <p>Email: {{ user['email'] }}</p>
+    <p>Login: {{ user['login'] }}</p>
+    <p>Password: {{ user['password'] }}</p>
+    <br>
+</div>
+{% endfor %}
